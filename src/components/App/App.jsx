@@ -6,14 +6,14 @@ import { ButtonGroup } from "../ButtonGroup/ButtonGroup";
 import { Input } from "../Input/Input";
 import { Result } from "../Result/Result";
 
-function App() {
+export const App = () => {
   const [inputValue, setInputValue] = useState("");
 
   const [firstNum, setFirstNum] = useState(null);
 
   const [operator, setOperator] = useState(null);
 
-  const [finalResult, setFinalResult] = useState("");
+  const [result, setResult] = useState("");
 
   const buttonHandler = (e) => {
     if (!firstNum) {
@@ -34,11 +34,11 @@ function App() {
       case "=":
         switch (operator) {
           case "+":
-            setFinalResult(firstNum + inputValue);
+            setResult(firstNum + inputValue);
             break;
 
           case "-":
-            setFinalResult(firstNum - inputValue);
+            setResult(firstNum - inputValue);
             break;
         }
 
@@ -53,9 +53,7 @@ function App() {
     <div className={styles.App}>
       <Input inputValue={inputValue} setInputValue={setInputValue} />
       <ButtonGroup buttonHandler={buttonHandler} />
-      <Result finalResult={finalResult} />
+      <Result result={result} />
     </div>
   );
-}
-
-export default App;
+};

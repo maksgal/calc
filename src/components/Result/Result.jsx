@@ -1,3 +1,3 @@
-export const Result = ({ finalResult }) => {
-  return <div>{finalResult}</div>;
+export const Result = ({ result }) => {
+  return <div>{result}</div>;
 };
